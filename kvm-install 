@@ -1,0 +1,6 @@
+#!/bin/bash 
+
+sudo yum groupinstall "Virtualization Host" && sudo systemctl status libvirtd &&
+sudo systemctl start libvirtd && sudo systemctl enable libvirtd &&
+sudo virsh version && sudo usermod -aG libvirt $(whoami) &&
+sudo yum install virt-install && virt-install --version && echo done
